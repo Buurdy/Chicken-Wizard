@@ -226,14 +226,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5016636397189091439, guid: a3d634ce13204f74fae993939f55e531, type: 3}
-      propertyPath: verticalSpeed
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5016636397189091439, guid: a3d634ce13204f74fae993939f55e531, type: 3}
-      propertyPath: maxVerticalHeight
-      value: 0.085
-      objectReference: {fileID: 0}
     - target: {fileID: 8137061750289518899, guid: a3d634ce13204f74fae993939f55e531, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

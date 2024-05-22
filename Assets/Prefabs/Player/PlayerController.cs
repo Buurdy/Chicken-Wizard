@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject playerSprite;
     SpriteRenderer playerSpriteRenderer;
     [SerializeField] GameObject rotationPoint;
+
     [Header("Movement")]
     [SerializeField] float movementSpeed;
     float xInput, yInput;
     Vector3 movementVector;
+
     [Header("Animation")]
     [SerializeField] float rotationSpeed;
     [SerializeField] float maxRotation;
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Gets a reference to the sprite renderer of the chicken sprite
         playerSpriteRenderer = playerSprite.GetComponent<SpriteRenderer>();
     }
 
@@ -65,15 +68,16 @@ public class PlayerController : MonoBehaviour
             else if(xInput < 0) playerSpriteRenderer.flipX = false;
 
             //These control the rotation of the sprite
-            //Rotates the player sprite depending on the current rotation direction
+            //Rotates the player sprite depending on the current rotation direction. Rotates the sprite around the rotation point, which should be at the chickens feet
             if (rotatingLeft) playerSprite.transform.RotateAround(rotationPoint.transform.position, Vector3.forward, rotationSpeed * Time.deltaTime);
             else playerSprite.transform.RotateAround(rotationPoint.transform.position, Vector3.forward, -rotationSpeed * Time.deltaTime);
             //Checks the sprites current rotation to see if it has passed the maximum rotation allowed, and switches the direction of rotation if it has
             if (rotatingLeft && playerSprite.transform.localRotation.z >= maxRotation) rotatingLeft = false;
             else if (!rotatingLeft && playerSprite.transform.localRotation.z <= -maxRotation) rotatingLeft = true;
 
+
             //These control the vertical movement of the sprite
-            //Moves the player up or down depending on the current vertical movement direction
+            //Moves the player up or down on the sprites local axis depending on the current vertical movement direction
             if (movingUp) playerSprite.transform.localPosition += new Vector3(0, verticalSpeed * Time.deltaTime, 0);
             else playerSprite.transform.localPosition -= new Vector3(0, verticalSpeed * Time.deltaTime, 0);
             //Checks the sprites current local vertical position to see if it has passed the maximum amount of movement, and switches direction if it has

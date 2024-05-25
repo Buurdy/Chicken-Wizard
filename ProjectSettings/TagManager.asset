@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Projectiles
+  - Player
   - 
   - 
   - 
@@ -46,4 +46,7 @@ TagManager:
     locked: 0
   - name: Midground
     uniqueID: 4110018273
+    locked: 0
+  - name: Foreground
+    uniqueID: 1680645829
     locked: 0

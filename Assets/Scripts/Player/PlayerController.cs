@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement")]
     [SerializeField] float movementSpeed;
     float xInput, yInput;
-    Vector3 movementVector;
+    Vector2 movementVector;
 
     [Header("Animation")]
     [SerializeField] float rotationSpeed;
@@ -21,6 +21,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float verticalSpeed, maxVerticalHeight;
     bool movingUp = true;
 
+    Rigidbody2D rb;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +39,14 @@ public class PlayerController : MonoBehaviour
     {
         //Gets the players input and stores it in a vector
         GetInput();
-        //Applies the players input as movement
-        Movement();
         //Plays walking animation when this is player input
         WalkAnimation();
+    }
+
+
+    private void FixedUpdate()
+    {
+        Movement();
     }
 
     //This function is used to get the players vertical and horizontal input and store it in a vector
@@ -48,19 +57,16 @@ public class PlayerController : MonoBehaviour
         //Stores players up/down input as a float, with -1 being down and 1 being up.
         yInput = Input.GetAxisRaw("Vertical");
         //Combines the inputs into a vector to get movement direciton. Normalizes this vector to ensure the player moves the same speed no matter the direction.
-        movementVector = new Vector3(xInput, yInput, 0).normalized;
+        movementVector = new Vector2(xInput, yInput).normalized;
     }
 
-    //This function is used to move the player character by the players input
     void Movement()
     {
-        //Translates the player by the movementVector at the speed of movementSpeed.
-        transform.Translate(movementVector * movementSpeed * Time.deltaTime);
+        rb.velocity = movementVector * movementSpeed * Time.fixedDeltaTime;
     }
 
     void WalkAnimation()
     {
-        //Checks to see if the player is inputting any movement
         if(movementVector.magnitude > 0)
         {
             //Checks which way the player is moving and flips the sprite to face to correct direction

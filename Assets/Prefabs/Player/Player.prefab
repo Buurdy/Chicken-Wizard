@@ -232,6 +232,9 @@ MonoBehaviour:
   playerSprite: {fileID: 1796312429797013444}
   rotationPoint: {fileID: 3390958579589730940}
   movementSpeed: 150
+  dodgeTime: 0.35
+  dodgeSpeedMultiplier: 2.5
+  dodgeCooldown: 1
   rotationSpeed: 175
   maxRotation: 0.2
   verticalSpeed: 0.9

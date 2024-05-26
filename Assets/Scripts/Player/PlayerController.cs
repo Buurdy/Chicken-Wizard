@@ -8,11 +8,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject playerSprite;
     SpriteRenderer playerSpriteRenderer;
     [SerializeField] GameObject rotationPoint;
+    Rigidbody2D rb;
 
     [Header("Movement")]
     [SerializeField] float movementSpeed;
     float xInput, yInput;
     Vector2 movementVector;
+
+    [Header("Dodge")]
+    [SerializeField] float dodgeTime;
+    [SerializeField] float dodgeSpeedMultiplier, dodgeCooldown;
+    float dodgeTimeEnd, dodgeCooldownEnd;
+    bool isDodging;
 
     [Header("Animation")]
     [SerializeField] float rotationSpeed;
@@ -21,7 +28,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float verticalSpeed, maxVerticalHeight;
     bool movingUp = true;
 
-    Rigidbody2D rb;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,34 +45,84 @@ public class PlayerController : MonoBehaviour
     {
         //Gets the players input and stores it in a vector
         GetInput();
-        //Plays walking animation when this is player input
-        WalkAnimation();
+        //Plays walking animation when this is player input and the player is not currently dodging
+        if(!isDodging) WalkAnimation();
+        //Quickly rolls forward when inputted
+        Dodge();
     }
 
 
     private void FixedUpdate()
     {
+        //Applies input as player movement
         Movement();
     }
 
     //This function is used to get the players vertical and horizontal input and store it in a vector
     void GetInput()
     {
-        //Stores players left/right input as a float, with -1 being left and 1 being right.
-        xInput = Input.GetAxisRaw("Horizontal");
-        //Stores players up/down input as a float, with -1 being down and 1 being up.
-        yInput = Input.GetAxisRaw("Vertical");
+        //Checks if the player is dodging, this just makes it so they can only dodge in one direction
+        if (!isDodging)
+        {
+            //Stores players left/right input as a float, with -1 being left and 1 being right.
+            xInput = Input.GetAxisRaw("Horizontal");
+            //Stores players up/down input as a float, with -1 being down and 1 being up.
+            yInput = Input.GetAxisRaw("Vertical");
+        }
         //Combines the inputs into a vector to get movement direciton. Normalizes this vector to ensure the player moves the same speed no matter the direction.
         movementVector = new Vector2(xInput, yInput).normalized;
     }
 
+    //This function is used to apply input to player movement
     void Movement()
     {
+        //Moves the player in the direction of movementVector at the speed of movementSpeed
         rb.velocity = movementVector * movementSpeed * Time.fixedDeltaTime;
+    }
+
+    //This function is used to dodge roll when inputted
+    void Dodge()
+    {
+        //Checks if the player presses the dodge key, they are currently not dodging, and if the dodge is off cooldown
+        if (Input.GetKeyDown(KeyCode.Space) && !isDodging && Time.time >= dodgeCooldownEnd)
+        {
+            //Sets the dodging state to true
+            isDodging = true;
+            //Sets when the dodge will finish
+            dodgeTimeEnd = Time.time + dodgeTime;
+            //Increases the speed of the player
+            movementSpeed *= dodgeSpeedMultiplier;
+            //Resets the player sprite
+            playerSprite.transform.localPosition = new Vector3(0, 0, 0);
+            playerSprite.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+
+        //Checks if the player has been dodging for the right amount of time
+        if (isDodging && Time.time >= dodgeTimeEnd)
+        {
+            //Resets movement speed
+            movementSpeed /= dodgeSpeedMultiplier;
+            //Resets the player sprite
+            playerSprite.transform.localPosition = new Vector3(0, 0, 0);
+            playerSprite.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            movingUp = true;
+            //Sets when the cooldown period will be finished
+            dodgeCooldownEnd = Time.time + dodgeCooldown;
+            //Sets the dodging state to false
+            isDodging = false;
+        }
+        //Checks if the player is currently still dodging
+        else if(isDodging && Time.time < dodgeTimeEnd)
+        {
+            //These check for which way the player is currently facing, and rotates the sprite in that direction. The rotation amount changes depending on how long the dodge roll is
+            if (playerSpriteRenderer.flipX) playerSprite.transform.eulerAngles -= Vector3.forward * ((360 / dodgeTime) * Time.deltaTime);
+            else playerSprite.transform.eulerAngles += Vector3.forward * ((360 / dodgeTime) * Time.deltaTime);
+        }
     }
 
     void WalkAnimation()
     {
+        //Checks if the player is moving
         if(movementVector.magnitude > 0)
         {
             //Checks which way the player is moving and flips the sprite to face to correct direction

@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 1386368112429954110}
   - component: {fileID: 890810709688803741}
   - component: {fileID: 1200899845035496228}
+  - component: {fileID: 5525498695865117058}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -316,6 +317,24 @@ MonoBehaviour:
   attackPoint: {fileID: 6230427639589738689}
   rotationTransform: {fileID: 5303281812595212305}
   wandConfiguration: {fileID: 11400000, guid: 5ffce1cce3d0d4c4b872791d0e5dff56, type: 2}
+--- !u!114 &5525498695865117058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3488592184414911874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5448b988798fb55439cd12064e5284d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  interactionRadius: 1
+  interactionPanelUi: {fileID: 0}
+  interactionPanelOffset: {x: 0, y: 0.1}
 --- !u!1 &8284210648582332618
 GameObject:
   m_ObjectHideFlags: 0

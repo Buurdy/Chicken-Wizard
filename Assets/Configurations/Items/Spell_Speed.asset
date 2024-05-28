@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709a9db3b85209d43aa297d2ce30dd51, type: 3}
+  m_Name: Spell_Speed
+  m_EditorClassIdentifier: 
+  Name: Add Speed
+  Description: Add spell speed
+  Icon: {fileID: 21300000, guid: 4d717b8e9f291674eb25e9aff3312475, type: 3}
+  WandSpellOverrides:
+  - PropertyName: projectile.speed
+    Operation: 1
+    Value: 1.5

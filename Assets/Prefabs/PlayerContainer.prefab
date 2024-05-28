@@ -116,6 +116,10 @@ PrefabInstance:
       propertyPath: interactionPanelUi
       value: 
       objectReference: {fileID: 2262637109459244553}
+    - target: {fileID: 7435896796212710191, guid: a3d634ce13204f74fae993939f55e531, type: 3}
+      propertyPath: ItemViewHolder
+      value: 
+      objectReference: {fileID: 4626983691703082294}
     - target: {fileID: 8137061750289518899, guid: a3d634ce13204f74fae993939f55e531, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.4423553
@@ -254,6 +258,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2646123336191713847, guid: 619f690b7f2db9743be756b5aaa94c8d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2646123336191713847, guid: 619f690b7f2db9743be756b5aaa94c8d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.71728516
+      objectReference: {fileID: 0}
     - target: {fileID: 4463552986389735319, guid: 619f690b7f2db9743be756b5aaa94c8d, type: 3}
       propertyPath: m_Name
       value: PlayerUi
@@ -266,6 +278,11 @@ PrefabInstance:
 --- !u!224 &2262637109459244553 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8928441744119802120, guid: 619f690b7f2db9743be756b5aaa94c8d, type: 3}
+  m_PrefabInstance: {fileID: 7245924565986639617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &4626983691703082294 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2646123336191713847, guid: 619f690b7f2db9743be756b5aaa94c8d, type: 3}
   m_PrefabInstance: {fileID: 7245924565986639617}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &7100240631689400508 stripped

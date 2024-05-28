@@ -9,12 +9,15 @@ public class CombatController : MonoBehaviour
     public Transform rotationTransform;
     public WandConfiguration wandConfiguration;
 
+    SpellManager spellManager;
     ProjectileFactory projectileFactory;
 
     public Vector3 AimDirection { get; private set; }
     private void Awake()
     {
         projectileFactory = new ProjectileFactory(wandConfiguration);
+        spellManager = GetComponent<SpellManager>();
+        spellManager.DefaultWandConfiguraiton = wandConfiguration;
     }
 
     void PollForEvents()
@@ -33,8 +36,7 @@ public class CombatController : MonoBehaviour
            return;
        }
        lastAttack = Time.time + wandConfiguration.attackCooldown;
-
-        Projectile projectile = projectileFactory.SpawnProjectile(attackPoint.position, AimDirection, wandConfiguration.projectileConfiguration);
+       Projectile projectile = projectileFactory.SpawnProjectile(attackPoint.position, AimDirection, wandConfiguration.projectileConfiguration);
     }
 
     private void Update()

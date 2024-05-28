@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerInteractor : MonoBehaviour
@@ -8,7 +9,10 @@ public class PlayerInteractor : MonoBehaviour
     public float interactionRadius = 1f;
 
     public Transform interactionPanelUi;
+    public TextMeshProUGUI interactionPanelText;
     public Vector2 interactionPanelOffset = new Vector2(0, 0.1f);
+
+    const string InteractionHeader = "Press E to ";
 
     private void Update()
     {
@@ -42,6 +46,7 @@ public class PlayerInteractor : MonoBehaviour
             }
             return;
         }
+
         for (int i = 0; i < hitCount; i++)
         {
             Debug.DrawLine(transform.position, hitBuffer[i].point, Color.green);
@@ -69,6 +74,7 @@ public class PlayerInteractor : MonoBehaviour
         {
             interactionPanelUi.gameObject.SetActive(true);
             interactionPanelUi.position = Camera.main.WorldToScreenPoint(currentInteractable.GetPosition() + interactionPanelOffset);
+            interactionPanelText.text = InteractionHeader + currentInteractable.GetMessage();
         }
         else
         {

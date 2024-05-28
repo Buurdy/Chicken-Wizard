@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObjectPickup : MonoBehaviour, IInteractable
 {
+    public SpellItemConfiguration SpellItemConfiguration;
     public Vector2 GetPosition()
     {
         return transform.position;
@@ -26,5 +27,10 @@ public class ObjectPickup : MonoBehaviour, IInteractable
 
     public void OnUnhover()
     {
+    }
+
+    public string GetMessage()
+    {
+        return "Pickup " + SpellItemConfiguration.Name;
     }
 }

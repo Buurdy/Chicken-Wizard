@@ -11,6 +11,8 @@ public class EnemyNavigation : MonoBehaviour
         public TextMeshProUGUI text;
         private int timesHit = 0;
         private float cooldown;
+
+        public IncreaseHitText hittext;
     NavMeshAgent agent;
     
     // Start is called before the first frame update
@@ -37,7 +39,7 @@ public class EnemyNavigation : MonoBehaviour
         {
             timesHit +=1;
             cooldown = 1;
-            text.SetText("Times Hit: " + timesHit);
+            hittext.Increase();
         }
     }
 }

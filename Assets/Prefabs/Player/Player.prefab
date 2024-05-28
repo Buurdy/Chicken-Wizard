@@ -332,9 +332,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactableLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   interactionRadius: 1
   interactionPanelUi: {fileID: 0}
+  interactionPanelText: {fileID: 0}
   interactionPanelOffset: {x: 0, y: 0.1}
 --- !u!114 &7435896796212710191
 MonoBehaviour:

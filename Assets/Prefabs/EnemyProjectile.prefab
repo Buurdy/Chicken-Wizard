@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8461964815671434797}
   m_Layer: 6
   m_Name: EnemyProjectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,6 +161,7 @@ MonoBehaviour:
   collisionRadius: 0.05
   Speed: 2
   hitText: {fileID: 0}
+  lifetime: 8
 --- !u!58 &8461964815671434797
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -195,4 +196,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.08

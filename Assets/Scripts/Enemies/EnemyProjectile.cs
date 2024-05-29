@@ -13,18 +13,34 @@ public class EnemyProjectile : MonoBehaviour
 
     public GameObject hitText;
 
+    [SerializeField] float lifetime;
+    float endLifetime;
+
+    private void Awake()
+    {
+        endLifetime = Time.time + lifetime;
+    }
+
     private void Update()
     {
         transform.position += transform.right * Time.deltaTime * Speed;
+
+        if(Time.time >= endLifetime)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Destroy(gameObject);
         if (other.gameObject.tag == "Player" )
         {
             hitText.GetComponent<IncreaseHitText>().Increase();
+        }
+        if(other.gameObject.tag != "Enemy" || other.gameObject.tag != "Projectile")
+        {
+            Destroy(gameObject);
         }
     }
 }

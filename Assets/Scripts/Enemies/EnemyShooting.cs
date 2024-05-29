@@ -31,7 +31,7 @@ public class EnemyShooting : MonoBehaviour
             
             instance.GetComponent<EnemyProjectile>().hitText = target2;
             timer = 1;
-            print("e");
+            //print("e");
         }
         else{
             timer -= Time.deltaTime;

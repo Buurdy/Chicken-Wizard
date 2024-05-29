@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 116953688}
   - component: {fileID: 116953687}
   - component: {fileID: 116953686}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemyShoot (1)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -507,7 +507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 138279968}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: WandSprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -600,7 +600,7 @@ GameObject:
   m_Component:
   - component: {fileID: 272923208}
   - component: {fileID: 272923209}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -831,7 +831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 423218627}
   - component: {fileID: 423218628}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -982,7 +982,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 635782509}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ProjectileSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1013,7 +1013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 675312758}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ProjectileSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1353,7 +1353,7 @@ GameObject:
   - component: {fileID: 1085156558}
   - component: {fileID: 1085156557}
   - component: {fileID: 1085156556}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemyShoot (2)
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1478,7 +1478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1196098211}
   - component: {fileID: 1196098212}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1618,7 +1618,7 @@ PrefabInstance:
       objectReference: {fileID: 825144171}
     - target: {fileID: 8749385291697535427, guid: 0594fea100ab2d247816eb1838abdcf5, type: 3}
       propertyPath: interactableLayer.m_Bits
-      value: 0
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1753,7 +1753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1496184228}
   - component: {fileID: 1496184229}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1983,7 +1983,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1511498537}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: ProjectileSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2015,7 +2015,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1733104064}
   - component: {fileID: 1733104065}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemySprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2473,7 +2473,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1927659824}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: WandSprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2510,7 +2510,7 @@ GameObject:
   - component: {fileID: 2034658296}
   - component: {fileID: 2034658295}
   - component: {fileID: 2034658300}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: EnemyShoot
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2634,7 +2634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2045038021}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: WandSprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2668,7 +2668,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2095760743}
   - component: {fileID: 2095760744}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -7,17 +7,16 @@ public class CombatController : MonoBehaviour
 {
     public Transform attackPoint;
     public Transform rotationTransform;
-    public WandConfiguration wandConfiguration;
 
     SpellManager spellManager;
     ProjectileFactory projectileFactory;
-
+    WandConfiguration WandConfiguration => spellManager.CurrentWandConfiguration;
     public Vector3 AimDirection { get; private set; }
     private void Awake()
     {
-        projectileFactory = new ProjectileFactory(wandConfiguration);
-        spellManager = GetComponent<SpellManager>();
-        spellManager.DefaultWandConfiguraiton = wandConfiguration;
+       spellManager = GetComponent<SpellManager>();
+        projectileFactory = new ProjectileFactory(WandConfiguration);
+
     }
 
     void PollForEvents()
@@ -35,8 +34,20 @@ public class CombatController : MonoBehaviour
        {
            return;
        }
-       lastAttack = Time.time + wandConfiguration.attackCooldown;
-       Projectile projectile = projectileFactory.SpawnProjectile(attackPoint.position, AimDirection, wandConfiguration.projectileConfiguration);
+       lastAttack = Time.time + WandConfiguration.attackCooldown;
+
+        for (int i = 0; i < WandConfiguration.projectileCount; i++)
+        {
+            SpawnProjectile();
+        }
+    }
+
+    void SpawnProjectile()
+    {
+        float angleMod = UnityEngine.Random.Range(-WandConfiguration.projectileConfiguration.randomAccuracy, WandConfiguration.projectileConfiguration.randomAccuracy);
+        var useAimDirection = Quaternion.Euler(0, 0, angleMod) * AimDirection;
+
+        Projectile projectile = projectileFactory.SpawnProjectile(attackPoint.position, useAimDirection, WandConfiguration.projectileConfiguration);
     }
 
     private void Update()

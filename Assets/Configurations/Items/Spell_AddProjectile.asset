@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Add Projectile
   Description: Double Projectiles
-  Icon: {fileID: 21300000, guid: 4d717b8e9f291674eb25e9aff3312475, type: 3}
+  Icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   WandSpellOverrides:
   - PropertyName: projectileCount
     Operation: 0
-    Value: 1
+    Value: 5

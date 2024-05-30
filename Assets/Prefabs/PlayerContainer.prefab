@@ -116,6 +116,10 @@ PrefabInstance:
       propertyPath: interactionPanelUi
       value: 
       objectReference: {fileID: 2262637109459244553}
+    - target: {fileID: 5525498695865117058, guid: a3d634ce13204f74fae993939f55e531, type: 3}
+      propertyPath: interactionPanelText
+      value: 
+      objectReference: {fileID: 6877014821282484399}
     - target: {fileID: 7435896796212710191, guid: a3d634ce13204f74fae993939f55e531, type: 3}
       propertyPath: ItemViewHolder
       value: 
@@ -285,6 +289,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2646123336191713847, guid: 619f690b7f2db9743be756b5aaa94c8d, type: 3}
   m_PrefabInstance: {fileID: 7245924565986639617}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6877014821282484399 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4323071413717790638, guid: 619f690b7f2db9743be756b5aaa94c8d, type: 3}
+  m_PrefabInstance: {fileID: 7245924565986639617}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7100240631689400508 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 434506365752094653, guid: 619f690b7f2db9743be756b5aaa94c8d, type: 3}

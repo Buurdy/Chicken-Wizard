@@ -13,7 +13,10 @@ public class ObjectPickup : MonoBehaviour, IInteractable
     public void OnInteract()
     {
         Debug.Log("Interacted with object");
-        DestorySelf();
+        var spellManager = GameObject.FindObjectOfType<SpellManager>();
+        if (spellManager.AddItem(SpellItemConfiguration)) {
+            DestorySelf();
+        }
     }
 
     void DestorySelf()

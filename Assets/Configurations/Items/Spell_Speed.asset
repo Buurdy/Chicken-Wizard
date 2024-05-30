@@ -18,4 +18,4 @@ MonoBehaviour:
   WandSpellOverrides:
   - PropertyName: projectile.speed
     Operation: 1
-    Value: 1.5
+    Value: 10

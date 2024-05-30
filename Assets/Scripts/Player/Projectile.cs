@@ -15,6 +15,7 @@ public class Projectile : MonoBehaviour
     public void Spawn(Vector2 direction, ProjectileConfiguration configuraiton)
     {
         Debug.DrawRay(transform.position, direction, Color.red, 1f);
+        lastPosition = transform.position;
         this.direction = direction.normalized;
         this.configuration = configuraiton;
         Invoke(nameof(OnLifeTimeLost), configuraiton.lifetime);
@@ -48,6 +49,14 @@ public class Projectile : MonoBehaviour
 
     void OnCollision(RaycastHit2D[] hits)
     {
+        foreach (var hit in hits)
+        {
+            Debug.Log(hit.collider.gameObject.name);
+            if(hit.collider.gameObject.tag == "Enemy")
+            {
+                hit.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage();
+            }
+        }
         OnLifeTimeLost();
     }
 

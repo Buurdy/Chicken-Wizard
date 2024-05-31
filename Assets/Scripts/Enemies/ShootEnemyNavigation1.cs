@@ -5,7 +5,7 @@ using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyNavigation : MonoBehaviour
+public class ShootEnemyNavigation : MonoBehaviour
 {
         //[SerializeField] Transform target;
         public Transform target;
@@ -13,8 +13,11 @@ public class EnemyNavigation : MonoBehaviour
         private int timesHit = 0;
         private float cooldown;
 
+        public Transform wandsprite;
+
         public IncreaseHitText hittext;
-    NavMeshAgent agent;
+        
+     NavMeshAgent agent;
     
     // Start is called before the first frame update
     void Start()
@@ -27,20 +30,25 @@ public class EnemyNavigation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(target.position);
-        if (cooldown > 0)
-        {
-            cooldown -= Time.deltaTime;
-        }
+        
+      RaycastHit2D hit =  Physics2D.Raycast(wandsprite.position, gameObject.transform.position - target.position, 10f);
+
+      if (hit.transform != target)
+      {
+        ToPlayer();
+        print("playernotfound");
+      }
+      else{
+        agent.SetDestination(gameObject.transform.position);
+        print("playerfound");
+      }
     }
 
-    void  OnCollisionEnter2D(Collision2D other)
+    
+    public void ToPlayer()
     {
-        if (other.gameObject.tag == "Player" && cooldown <= 0)
-        {
-            timesHit +=1;
-            cooldown = 1;
-            hittext.Increase();
-        }
+        agent.SetDestination(target.position);
+        
+
     }
 }

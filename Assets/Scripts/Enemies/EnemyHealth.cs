@@ -5,6 +5,10 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int Health;
+
+    public EnemiesKilled dead;
+
+    private bool kill = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +18,10 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (kill == true)
+        {
+Destroy(gameObject);
+        }
     }
 
     public void TakeDamage()
@@ -22,7 +29,8 @@ public class EnemyHealth : MonoBehaviour
         Health -=1;
         if (Health <= 0)
         {
-            Destroy(gameObject);
+            dead.enemyHasDied();
+            kill = true;
         }
 
     }

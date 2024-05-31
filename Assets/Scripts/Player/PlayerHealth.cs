@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerProjectileDamage : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
+
+    public int maxHealth;
+
+    private int health;
     // Start is called before the first frame update
     void Start()
     {
-        
+        health = maxHealth;
     }
 
     // Update is called once per frame
@@ -16,12 +20,13 @@ public class PlayerProjectileDamage : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    public void TakeDamage()
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        health -= 1;
+        if (health <= 0)
         {
-            other.gameObject.GetComponent<EnemyHealth>().TakeDamage();
+            print("You died");
+            //do whatever the lose case would be
         }
-        Destroy(gameObject);
     }
 }

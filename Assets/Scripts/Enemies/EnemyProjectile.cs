@@ -19,6 +19,7 @@ public class EnemyProjectile : MonoBehaviour
     private void Awake()
     {
         endLifetime = Time.time + lifetime;
+        hitText = GameObject.Find("Hit Text");
     }
 
     private void Update()
@@ -31,14 +32,14 @@ public class EnemyProjectile : MonoBehaviour
         }
     }
 
-
-    void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.gameObject.tag == "Player" )
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.tag == "Player")
         {
             hitText.GetComponent<IncreaseHitText>().Increase();
         }
-        if(other.gameObject.tag != "Enemy" || other.gameObject.tag != "Projectile")
+        if (collision.gameObject.tag != "Enemy" && collision.gameObject.tag != "Projectile")
         {
             Destroy(gameObject);
         }

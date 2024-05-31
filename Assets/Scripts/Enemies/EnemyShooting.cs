@@ -18,6 +18,8 @@ public class EnemyShooting : MonoBehaviour
 
    public NavMeshAgent agent;
 
+    RaycastHit2D hit;
+
    private bool setRotation = false;
     private float timer = 0;
    
@@ -54,18 +56,19 @@ public class EnemyShooting : MonoBehaviour
             timer -= Time.deltaTime;
         }
 
-
         Quaternion rotation = Quaternion.LookRotation(target.position - spawnPos.transform.position , spawnPos.transform.TransformDirection(Vector3.up));
         spawnPos.transform.rotation = new Quaternion( 0 , 0 , rotation.z , rotation.w );
-        
-        RaycastHit2D hit =  Physics2D.Raycast(transform.position, target.position - transform.position,10f, layermask);
-        Debug.DrawRay(transform.position, transform.right * 10f, Color.red);
+
+        hit = Physics2D.Raycast(spawnPos.position, target.position - spawnPos.position, 10f, layermask);
+        Debug.DrawRay(spawnPos.position, spawnPos.right * 10f, Color.red);
         
         if (hit.collider != null)
         {
-            if ( Physics2D.Raycast(transform.position, target.position - transform.position,10f, layermask))
+            if (Physics2D.Raycast(spawnPos.position, target.position - spawnPos.position, 10f, layermask))
             {
-                if(hit.collider.gameObject.CompareTag("Player"))
+                Debug.Log(hit.collider.gameObject.name);
+                hit = Physics2D.Raycast(spawnPos.position, target.position - spawnPos.position, 10f, layermask);
+                if (hit.collider.gameObject.CompareTag("Player"))
                 {
                     if(timer <= 0)
                     {
@@ -73,16 +76,16 @@ public class EnemyShooting : MonoBehaviour
             
                         //instance.GetComponent<EnemyProjectile>().hitText = target2;
                         timer = 1;
-                        print("shot");
+                        //print("shot");
                     }
                 agent.SetDestination(gameObject.transform.position);
-                //print("playerfound");
+                print("playerfound");
                 }
                 else
                 {
         
                 ToPlayer();
-                //print("playernotfound");
+                print("playernotfound");
                 }
             }
         }    

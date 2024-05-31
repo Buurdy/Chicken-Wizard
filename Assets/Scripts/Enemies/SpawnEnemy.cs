@@ -96,9 +96,9 @@ public class SpawnEnemy : MonoBehaviour
     public void SpawnShoot()
     {
 GameObject enemy =  Instantiate(shootEnemy, gameObject.transform);
-
+        /*
       enemy.GetComponent<EnemyShooting>().target = player;
-      enemy.GetComponent<EnemyShooting>().target2 = damageManager;
+      enemy.GetComponent<EnemyShooting>().target2 = damageManager;*/
       enemy.GetComponent<EnemyHealth>().dead = killed;
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7684802193055387880}
   - component: {fileID: 5209055236493157481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Llama Spit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8985800481170380647}
   - component: {fileID: 8436323253390112173}
   - component: {fileID: 8461964815671434797}
-  m_Layer: 2
+  m_Layer: 6
   m_Name: EnemyProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}

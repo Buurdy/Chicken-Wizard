@@ -20,7 +20,6 @@ public class EnemyProjectile : MonoBehaviour
     {
         endLifetime = Time.time + lifetime;
         hitText = GameObject.Find("Hit Text");
-        Debug.Log(hitText);
     }
 
     private void Update()
@@ -42,7 +41,6 @@ public class EnemyProjectile : MonoBehaviour
         }
         if (collision.gameObject.tag != "Enemy" && collision.gameObject.tag != "Projectile")
         {
-            Debug.Log(collision.gameObject.tag);
             Destroy(gameObject);
         }
     }

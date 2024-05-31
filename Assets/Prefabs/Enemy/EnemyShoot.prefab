@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8796811842213420510}
   - component: {fileID: 1053777164400061907}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: llama_sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,12 +93,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2743450258464428701}
+  - component: {fileID: 4312477693801374270}
   - component: {fileID: 4866130345981987682}
   - component: {fileID: 4335764135666690720}
   - component: {fileID: 905024213005392402}
-  - component: {fileID: 4312477693801374270}
   - component: {fileID: 2915399863612570393}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: EnemyShoot
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -122,6 +122,28 @@ Transform:
   - {fileID: 8796811842213420510}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &4312477693801374270
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3039202166817402552}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1
+  m_Acceleration: 2
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!50 &4866130345981987682
 Rigidbody2D:
   serializedVersion: 4
@@ -148,7 +170,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &4335764135666690720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +190,7 @@ MonoBehaviour:
   agent: {fileID: 4312477693801374270}
   layermask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 439
 --- !u!114 &905024213005392402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,28 +205,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 3
   dead: {fileID: 0}
---- !u!195 &4312477693801374270
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3039202166817402552}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 1
-  m_Acceleration: 2
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!61 &2915399863612570393
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 731784993947100449}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: ProjectileSpawnPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

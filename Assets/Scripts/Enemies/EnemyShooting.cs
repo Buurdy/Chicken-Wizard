@@ -17,6 +17,8 @@ public class EnemyShooting : MonoBehaviour
     public GameObject target2;
 
    public NavMeshAgent agent;
+
+   private bool setRotation = false;
     private float timer = 0;
    
 
@@ -27,13 +29,19 @@ public class EnemyShooting : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        
+       
         
     }
 
     // Update is called once per frame
     void Update()
     {
+      if (setRotation == false)
+      {
+        setRotation = true;
+        transform.right = target.position - transform.position; //Sets rotation so enemy always starts looking at player
+  
+      }
         //agent.updateRotation = false;
         if(timer <= 0)
         {
@@ -43,10 +51,14 @@ public class EnemyShooting : MonoBehaviour
         else{
             timer -= Time.deltaTime;
         }
+
+
         Quaternion rotation = Quaternion.LookRotation(target.position - transform.position , transform.TransformDirection(Vector3.up));
-transform.rotation = new Quaternion( 0 , 0 , rotation.z , rotation.w );
+        transform.rotation = new Quaternion( 0 , 0 , rotation.z , rotation.w );
+        
         RaycastHit2D hit =  Physics2D.Raycast(transform.position, target.position - transform.position,10f, layermask);
         Debug.DrawRay(transform.position, transform.right * 10f, Color.red);
+        
     if (hit.collider != null)
     {
         

@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 using TMPro;
+using System;
 
 public class IncreaseHitText : MonoBehaviour
 {
     public TextMeshProUGUI text;
+
+    public PlayerHealth pHealth;
         private int timesHit = 0;
+     private float cooldown;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +21,24 @@ public class IncreaseHitText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (cooldown > 0){
+            cooldown -= Time.deltaTime;
+        }
     }
 
     public void Increase()
     {
+        if(cooldown <= 0)
+        {
+        cooldown = 1;
         timesHit += 1;
         text.SetText("Times Hit: " + timesHit);
+        pHealth.TakeDamage();
+        }
+    }
+
+    public static implicit operator IncreaseHitText(GameObject v)
+    {
+        throw new NotImplementedException();
     }
 }

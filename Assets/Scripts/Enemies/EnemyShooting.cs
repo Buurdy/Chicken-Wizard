@@ -22,6 +22,12 @@ public class EnemyShooting : MonoBehaviour
 
    private bool setRotation = false;
     private float timer = 0;
+
+    [SerializeField] SpriteRenderer llamaSprite;
+    bool movingDown = true;
+    [SerializeField] float squishSpeed, maxSquish;
+    Vector3 normalSize;
+    Vector3 lastPos;
    
 
     public LayerMask layermask;
@@ -34,6 +40,7 @@ public class EnemyShooting : MonoBehaviour
 
         target2 = GameObject.Find("Player");
         target = target2.transform;
+        normalSize = llamaSprite.transform.localScale;
     }
 
     // Update is called once per frame
@@ -88,7 +95,46 @@ public class EnemyShooting : MonoBehaviour
                 print("playernotfound");
                 }
             }
-        }    
+        }
+
+        MovementAnimation();
+        lastPos = transform.position;
+    }
+
+    void MovementAnimation()
+    {
+        //Checks which way the player is moving and flips the sprite to face to correct direction
+        if (agent.desiredVelocity.x > 0) llamaSprite.flipX = true;
+        else if (agent.desiredVelocity.x < 0) llamaSprite.flipX = false;
+
+        //Checks if the player is moving
+        if (lastPos != transform.position)
+        {
+            //These control the rotation of the sprite
+            //Rotates the player sprite depending on the current rotation direction. Rotates the sprite around the rotation point, which should be at the chickens feet
+            if (movingDown)
+            {
+                llamaSprite.transform.localScale -= new Vector3(0, squishSpeed * Time.deltaTime, 0);
+                llamaSprite.transform.localPosition += new Vector3(0, squishSpeed * Time.deltaTime, 0);
+            }
+            else
+            {
+                llamaSprite.transform.localScale += new Vector3(0, squishSpeed * Time.deltaTime, 0);
+                llamaSprite.transform.localPosition -= new Vector3(0, squishSpeed * Time.deltaTime, 0);
+            }
+
+            //Checks the sprites current rotation to see if it has passed the maximum rotation allowed, and switches the direction of rotation if it has
+            if (movingDown && llamaSprite.transform.localScale.y <= maxSquish) movingDown = false;
+            else if (!movingDown && llamaSprite.transform.localScale.y >= normalSize.y) movingDown = true;
+        }
+        //Executes if the player is not pressing any input
+        else
+        {
+            //Resets the character sprites position and rotation
+            llamaSprite.transform.localPosition = new Vector3(0, 0, 0);
+            llamaSprite.transform.localScale = normalSize;
+            movingDown = true;
+        }
     }
 
     public void ToPlayer()

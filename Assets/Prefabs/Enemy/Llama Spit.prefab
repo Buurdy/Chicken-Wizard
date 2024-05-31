@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8436323253390112173}
   - component: {fileID: 8461964815671434797}
   m_Layer: 6
-  m_Name: EnemyProjectile
+  m_Name: Llama Spit
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

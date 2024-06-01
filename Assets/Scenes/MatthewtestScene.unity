@@ -423,7 +423,7 @@ MonoBehaviour:
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 22
+  basetimer: 17
 --- !u!1 &69317807
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 24
+  basetimer: 21
 --- !u!4 &153418169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4984968927871811954, guid: 0594fea100ab2d247816eb1838abdcf5, type: 3}
@@ -5117,7 +5117,7 @@ MonoBehaviour:
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 23
+  basetimer: 16
 --- !u!1 &1920836101
 GameObject:
   m_ObjectHideFlags: 0

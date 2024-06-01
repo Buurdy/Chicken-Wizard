@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float verticalSpeed, maxVerticalHeight;
     bool movingUp = true;
 
+    [Header("Animation")]
+    public int projectileCount;
+    public int projectileSpeed, projectileLifetime;
+
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

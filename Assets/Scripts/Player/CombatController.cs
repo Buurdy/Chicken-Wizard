@@ -8,6 +8,8 @@ public class CombatController : MonoBehaviour
     public Transform attackPoint;
     public Transform rotationTransform;
 
+    PlayerController playerController;
+
     SpellManager spellManager;
     ProjectileFactory projectileFactory;
     WandConfiguration WandConfiguration => spellManager.CurrentWandConfiguration;
@@ -16,7 +18,7 @@ public class CombatController : MonoBehaviour
     {
        spellManager = GetComponent<SpellManager>();
         projectileFactory = new ProjectileFactory(WandConfiguration);
-
+        playerController = GetComponent<PlayerController>();
     }
 
     void PollForEvents()
@@ -35,8 +37,8 @@ public class CombatController : MonoBehaviour
            return;
        }
        lastAttack = Time.time + WandConfiguration.attackCooldown;
-
-        for (int i = 0; i < WandConfiguration.projectileCount; i++)
+        Debug.Log(playerController.projectileCount);
+        for (int i = 0; i < playerController.projectileCount; i++)
         {
             SpawnProjectile();
         }

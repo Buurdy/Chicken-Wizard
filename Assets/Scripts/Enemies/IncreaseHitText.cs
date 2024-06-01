@@ -9,6 +9,9 @@ public class IncreaseHitText : MonoBehaviour
 {
     public TextMeshProUGUI text;
 
+    public int maxAmountOfHits;
+    public GameObject gameOverScreen;
+
     public PlayerHealth pHealth;
         private int timesHit = 0;
      private float cooldown;
@@ -23,6 +26,12 @@ public class IncreaseHitText : MonoBehaviour
     {
         if (cooldown > 0){
             cooldown -= Time.deltaTime;
+        }
+
+        if(timesHit >= maxAmountOfHits)
+        {
+            gameOverScreen.SetActive(true);
+            this.gameObject.SetActive(false);
         }
     }
 

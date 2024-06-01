@@ -12,6 +12,7 @@ public class SpawnEnemy : MonoBehaviour
 
 
     public Transform player;
+    PlayerController playerController;
 
     public TextMeshProUGUI text;
 
@@ -33,6 +34,7 @@ public class SpawnEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        playerController = FindObjectOfType<PlayerController>();
       randomNumber = Random.Range(0, 3);
       if(randomNumber > 1)
       {
@@ -53,7 +55,8 @@ public class SpawnEnemy : MonoBehaviour
           timer -= Time.deltaTime;
 
           if(timer <= 0){
-            timer = basetimer;
+                if ((basetimer - playerController.componentCount) > 3) timer = basetimer - playerController.componentCount;
+                else timer = 3;
             randomNumber = Random.Range(0, 3);
       if(randomNumber > 1)
       {

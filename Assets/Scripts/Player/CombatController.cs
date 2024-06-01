@@ -7,6 +7,7 @@ public class CombatController : MonoBehaviour
 {
     public Transform attackPoint;
     public Transform rotationTransform;
+    PlayerController playerController;
 
     SpellManager spellManager;
     ProjectileFactory projectileFactory;
@@ -16,6 +17,7 @@ public class CombatController : MonoBehaviour
     {
        spellManager = GetComponent<SpellManager>();
         projectileFactory = new ProjectileFactory(WandConfiguration);
+        playerController = GetComponent<PlayerController>();
 
     }
 
@@ -36,7 +38,7 @@ public class CombatController : MonoBehaviour
        }
        lastAttack = Time.time + WandConfiguration.attackCooldown;
 
-        for (int i = 0; i < WandConfiguration.projectileCount; i++)
+        for (int i = 0; i < playerController.projectileCount; i++)
         {
             SpawnProjectile();
         }

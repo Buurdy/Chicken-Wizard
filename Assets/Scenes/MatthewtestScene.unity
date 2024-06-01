@@ -3215,13 +3215,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerContainer
       objectReference: {fileID: 0}
+    - target: {fileID: 8096381833278930990, guid: 0594fea100ab2d247816eb1838abdcf5, type: 3}
+      propertyPath: projectileCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096381833278930990, guid: 0594fea100ab2d247816eb1838abdcf5, type: 3}
+      propertyPath: projectileSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8096381833278930990, guid: 0594fea100ab2d247816eb1838abdcf5, type: 3}
+      propertyPath: projectileLifetime
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8749385291697535427, guid: 0594fea100ab2d247816eb1838abdcf5, type: 3}
       propertyPath: interactionPanelText
       value: 
       objectReference: {fileID: 825144171}
     - target: {fileID: 8749385291697535427, guid: 0594fea100ab2d247816eb1838abdcf5, type: 3}
       propertyPath: interactableLayer.m_Bits
-      value: 0
+      value: 256
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

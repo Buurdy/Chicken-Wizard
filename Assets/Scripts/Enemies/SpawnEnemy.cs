@@ -29,7 +29,7 @@ public class SpawnEnemy : MonoBehaviour
 
     private float timer;
 
-    private float randomNumber;
+    private int randomNumber;
     // Start is called before the first frame update
     void Awake()
     {

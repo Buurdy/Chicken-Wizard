@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collisionRadius: 0.05
-  Speed: 2
+  Speed: 3
   hitText: {fileID: 0}
   lifetime: 8
 --- !u!58 &8461964815671434797

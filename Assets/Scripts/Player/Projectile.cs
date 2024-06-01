@@ -11,14 +11,17 @@ public class Projectile : MonoBehaviour
     ProjectileConfiguration configuration;
     Vector2 direction;
     Vector2 lastPosition;
+    PlayerController playerController;
 
-    public void Spawn(Vector2 direction, ProjectileConfiguration configuraiton)
+    public void Spawn(Vector2 direction)
     {
+        playerController = FindObjectOfType<PlayerController>();
         Debug.DrawRay(transform.position, direction, Color.red, 1f);
         lastPosition = transform.position;
         this.direction = direction.normalized;
-        this.configuration = configuraiton;
-        Invoke(nameof(OnLifeTimeLost), configuraiton.lifetime);
+        //this.configuration = configuraiton;
+        Invoke(nameof(OnLifeTimeLost), playerController.projectileLifetime);
+        transform.localScale += new Vector3(playerController.projectileSize, playerController.projectileSize, 0);
         isSpawned = true;
     }
 
@@ -33,7 +36,7 @@ public class Projectile : MonoBehaviour
     {
         if (isSpawned)
         {
-            transform.position += (Vector3)direction * configuration.speed * Time.deltaTime;
+            transform.position += (Vector3)direction * playerController.projectileSpeed * Time.deltaTime;
         }
     }
 

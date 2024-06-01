@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class CombatController : MonoBehaviour
 {
     public Transform attackPoint;
     public Transform rotationTransform;
+    public GameObject projectile, spawnPoint;
+    PlayerController playerController;
 
     SpellManager spellManager;
     ProjectileFactory projectileFactory;
@@ -16,6 +19,7 @@ public class CombatController : MonoBehaviour
     {
        spellManager = GetComponent<SpellManager>();
         projectileFactory = new ProjectileFactory(WandConfiguration);
+        playerController = GetComponent<PlayerController>();
 
     }
 
@@ -36,7 +40,7 @@ public class CombatController : MonoBehaviour
        }
        lastAttack = Time.time + WandConfiguration.attackCooldown;
 
-        for (int i = 0; i < WandConfiguration.projectileCount; i++)
+        for (int i = 0; i < playerController.projectileCount; i++)
         {
             SpawnProjectile();
         }
@@ -46,8 +50,10 @@ public class CombatController : MonoBehaviour
     {
         float angleMod = UnityEngine.Random.Range(-WandConfiguration.projectileConfiguration.randomAccuracy, WandConfiguration.projectileConfiguration.randomAccuracy);
         var useAimDirection = Quaternion.Euler(0, 0, angleMod) * AimDirection;
+        Projectile spawnedProjectile = Instantiate(projectile, spawnPoint.transform.position, Quaternion.identity).GetComponent<Projectile>();
+        spawnedProjectile.Spawn(useAimDirection);
 
-        Projectile projectile = projectileFactory.SpawnProjectile(attackPoint.position, useAimDirection, WandConfiguration.projectileConfiguration);
+        //Projectile projectile = projectileFactory.SpawnProjectile(attackPoint.position, useAimDirection, WandConfiguration.projectileConfiguration);
     }
 
     private void Update()

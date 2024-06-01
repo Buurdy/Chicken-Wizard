@@ -272,3 +272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 4
   dead: {fileID: 0}
+  components:
+  - {fileID: 7981991608009156136, guid: c0947c0f79a5b6447b74d3192bd74d75, type: 3}
+  - {fileID: 8783643504392484259, guid: 97988eb19e0dac142a6622fa2c77ccb3, type: 3}
+  - {fileID: 2471536048124691135, guid: 88616573c8eaa3541b7c7710cffbeccb, type: 3}
+  chanceToDropComponent: 35

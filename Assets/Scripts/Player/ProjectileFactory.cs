@@ -14,7 +14,7 @@ public class ProjectileFactory
     public Projectile SpawnProjectile(Vector3 position, Vector3 direction, ProjectileConfiguration projectileConfiguration)
     {
         Projectile projectile = Object.Instantiate(wandConfiguration.projectileObject, position, Quaternion.identity).GetComponent<Projectile>();
-        projectile.Spawn(direction, projectileConfiguration);
+        projectile.Spawn(direction);
         return projectile;
     }
 }

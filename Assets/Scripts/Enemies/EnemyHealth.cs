@@ -8,20 +8,15 @@ public class EnemyHealth : MonoBehaviour
 
     public EnemiesKilled dead;
 
-    private bool kill = false;
+    public GameObject[] components;
+    public int chanceToDropComponent;
+    int rndNum;
+    int rndChance;
+
     // Start is called before the first frame update
     void Start()
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (kill == true)
-        {
-Destroy(gameObject);
-        }
     }
 
     public void TakeDamage()
@@ -30,7 +25,14 @@ Destroy(gameObject);
         if (Health <= 0)
         {
             dead.enemyHasDied();
-            kill = true;
+            rndChance = Random.Range(0, 101);
+            if(rndChance <= chanceToDropComponent)
+            {
+                rndNum = Random.Range(0, components.Length);
+                Instantiate(components[rndNum], this.gameObject.transform.position, Quaternion.Euler(0, 0, 0));
+            }
+
+            Destroy(gameObject);
         }
 
     }

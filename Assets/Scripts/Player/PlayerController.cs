@@ -28,6 +28,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float verticalSpeed, maxVerticalHeight;
     bool movingUp = true;
 
+    [Header("Speel Components")]
+    public int componentCount = 0;
+    public List<string> components = new List<string>();
+    public int projectileCount;
+    public int projectileSpeed, projectileSize, projectileLifetime;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -49,6 +55,28 @@ public class PlayerController : MonoBehaviour
         if(!isDodging) WalkAnimation();
         //Quickly rolls forward when inputted
         Dodge();
+
+        if(componentCount > 5)
+        {
+            if (components[0] == "More Projectiles")
+            {
+                componentCount--;
+                projectileCount--;
+                components.RemoveAt(0);
+            }
+            else if (components[0] == "Projectile Speed")
+            {
+                componentCount--;
+                projectileSpeed--;
+                components.RemoveAt(0);
+            }
+            else if (components[0] == "Projectile Size")
+            {
+                componentCount--;
+                projectileSize--;
+                components.RemoveAt(0);
+            }
+        }
     }
 
 

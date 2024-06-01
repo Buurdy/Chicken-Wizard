@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ComponentPickup : MonoBehaviour, IInteractable
 {
-    [SerializeField] bool moreProjectiles, projectileSpeed;
+    [SerializeField] bool moreProjectiles, projectileSpeed, projectileSize;
     PlayerController playerController;
     string nameOfComponent;
 
@@ -12,8 +12,9 @@ public class ComponentPickup : MonoBehaviour, IInteractable
     {
         playerController = FindObjectOfType<PlayerController>();
 
-        if (moreProjectiles) nameOfComponent = "more projectiles";
-        else if (projectileSpeed) nameOfComponent = "projectile speed";
+        if (moreProjectiles) nameOfComponent = "More Projectiles";
+        else if (projectileSpeed) nameOfComponent = "Projectile Speed";
+        else if (projectileSize) nameOfComponent = "Projectile Size";
     }
 
     public Vector2 GetPosition()
@@ -27,11 +28,19 @@ public class ComponentPickup : MonoBehaviour, IInteractable
         {
             playerController.projectileCount++;
             playerController.componentCount++;
+            playerController.components.Add(nameOfComponent);
         }
         else if (projectileSpeed)
         {
             playerController.projectileSpeed++;
             playerController.componentCount++;
+            playerController.components.Add(nameOfComponent);
+        }
+        else if(projectileSize)
+        {
+            playerController.projectileSize++;
+            playerController.componentCount++;
+            playerController.components.Add(nameOfComponent);
         }
         DestorySelf();
     }

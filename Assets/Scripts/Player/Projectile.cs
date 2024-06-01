@@ -21,6 +21,7 @@ public class Projectile : MonoBehaviour
         this.direction = direction.normalized;
         //this.configuration = configuraiton;
         Invoke(nameof(OnLifeTimeLost), playerController.projectileLifetime);
+        transform.localScale += new Vector3(playerController.projectileSize, playerController.projectileSize, 0);
         isSpawned = true;
     }
 

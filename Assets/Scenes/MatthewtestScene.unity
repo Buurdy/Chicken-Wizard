@@ -418,8 +418,8 @@ MonoBehaviour:
   shootEnemy: {fileID: 3039202166817402552, guid: a479dc2949cd5104aa78d16ee2e5a557, type: 3}
   player: {fileID: 153418169}
   text: {fileID: 1453255387}
-  hittext: {fileID: 209583157}
-  damageManager: {fileID: 209583155}
+  hittext: {fileID: 1453255389}
+  damageManager: {fileID: 1291099213}
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
@@ -787,8 +787,8 @@ MonoBehaviour:
   shootEnemy: {fileID: 3039202166817402552, guid: a479dc2949cd5104aa78d16ee2e5a557, type: 3}
   player: {fileID: 153418169}
   text: {fileID: 1453255387}
-  hittext: {fileID: 209583157}
-  damageManager: {fileID: 209583155}
+  hittext: {fileID: 1453255389}
+  damageManager: {fileID: 1291099213}
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
@@ -798,22 +798,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4984968927871811954, guid: 0594fea100ab2d247816eb1838abdcf5, type: 3}
   m_PrefabInstance: {fileID: 1400119510}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &209583155 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6091052513419649149, guid: aaf9b61f0bf73854997f5caef5348d52, type: 3}
-  m_PrefabInstance: {fileID: 7458360122347384500}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &209583157 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5420407737821923852, guid: aaf9b61f0bf73854997f5caef5348d52, type: 3}
-  m_PrefabInstance: {fileID: 7458360122347384500}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209583155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e930e7dea19e10d459048b5f325dfe29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &257509162
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,12 +919,12 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
+    bottomLeft: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
@@ -1561,12 +1545,12 @@ MonoBehaviour:
   shootEnemy: {fileID: 3039202166817402552, guid: a479dc2949cd5104aa78d16ee2e5a557, type: 3}
   player: {fileID: 153418169}
   text: {fileID: 1453255387}
-  hittext: {fileID: 209583157}
-  damageManager: {fileID: 209583155}
+  hittext: {fileID: 1453255389}
+  damageManager: {fileID: 1291099213}
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 16
+  basetimer: 14
 --- !u!4 &587154224
 Transform:
   m_ObjectHideFlags: 0
@@ -2912,12 +2896,12 @@ MonoBehaviour:
   shootEnemy: {fileID: 3039202166817402552, guid: a479dc2949cd5104aa78d16ee2e5a557, type: 3}
   player: {fileID: 153418169}
   text: {fileID: 1453255387}
-  hittext: {fileID: 209583157}
-  damageManager: {fileID: 209583155}
+  hittext: {fileID: 1453255389}
+  damageManager: {fileID: 1291099213}
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 17
+  basetimer: 13
 --- !u!4 &1125445080
 Transform:
   m_ObjectHideFlags: 0
@@ -3118,12 +3102,12 @@ MonoBehaviour:
   shootEnemy: {fileID: 3039202166817402552, guid: a479dc2949cd5104aa78d16ee2e5a557, type: 3}
   player: {fileID: 153418169}
   text: {fileID: 1453255387}
-  hittext: {fileID: 209583157}
-  damageManager: {fileID: 209583155}
+  hittext: {fileID: 1453255389}
+  damageManager: {fileID: 1291099213}
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 18
+  basetimer: 12
 --- !u!4 &1313549692
 Transform:
   m_ObjectHideFlags: 0
@@ -3352,7 +3336,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1447104063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3481,7 +3465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1453255387}
-  maxAmountOfHits: 1
+  maxAmountOfHits: 5
   gameOverScreen: {fileID: 1447104062}
   pHealth: {fileID: 401393420}
 --- !u!1 &1486381901
@@ -3846,13 +3830,13 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 0.31132078, g: 0.08076719, b: 0.08076719, a: 1}
+    topRight: {r: 0.29803923, g: 0.29803923, b: 0.29803923, a: 1}
+    bottomLeft: {r: 1, g: 0, b: 0, a: 1}
+    bottomRight: {r: 0.4716981, g: 0, b: 0, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -4319,8 +4303,8 @@ MonoBehaviour:
   shootEnemy: {fileID: 3039202166817402552, guid: a479dc2949cd5104aa78d16ee2e5a557, type: 3}
   player: {fileID: 153418169}
   text: {fileID: 1453255387}
-  hittext: {fileID: 209583157}
-  damageManager: {fileID: 209583155}
+  hittext: {fileID: 1453255389}
+  damageManager: {fileID: 1291099213}
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
@@ -4652,12 +4636,12 @@ MonoBehaviour:
   shootEnemy: {fileID: 3039202166817402552, guid: a479dc2949cd5104aa78d16ee2e5a557, type: 3}
   player: {fileID: 153418169}
   text: {fileID: 1453255387}
-  hittext: {fileID: 209583157}
-  damageManager: {fileID: 209583155}
+  hittext: {fileID: 1453255389}
+  damageManager: {fileID: 1291099213}
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 12
+  basetimer: 10
 --- !u!4 &1995686276
 Transform:
   m_ObjectHideFlags: 0
@@ -5132,6 +5116,18 @@ PrefabInstance:
       propertyPath: pHealth
       value: 
       objectReference: {fileID: 401393420}
+    - target: {fileID: 5420407737821923852, guid: aaf9b61f0bf73854997f5caef5348d52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420407737821923852, guid: aaf9b61f0bf73854997f5caef5348d52, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 1447104062}
+    - target: {fileID: 6091052513419649149, guid: aaf9b61f0bf73854997f5caef5348d52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7442290774698497623, guid: aaf9b61f0bf73854997f5caef5348d52, type: 3}
       propertyPath: m_Name
       value: Hit Text

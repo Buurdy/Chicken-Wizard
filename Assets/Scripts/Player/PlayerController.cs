@@ -60,21 +60,21 @@ public class PlayerController : MonoBehaviour
         {
             if (components[0] == "More Projectiles")
             {
+                components.RemoveAt(0);
                 componentCount--;
                 projectileCount--;
-                components.RemoveAt(0);
             }
             else if (components[0] == "Projectile Speed")
             {
+                components.RemoveAt(0);
                 componentCount--;
                 projectileSpeed--;
-                components.RemoveAt(0);
             }
             else if (components[0] == "Projectile Size")
             {
+                components.RemoveAt(0);
                 componentCount--;
                 projectileSize--;
-                components.RemoveAt(0);
             }
         }
     }

@@ -55,8 +55,8 @@ public class SpawnEnemy : MonoBehaviour
           timer -= Time.deltaTime;
 
           if(timer <= 0){
-                if ((basetimer - playerController.componentCount) > 3) timer = basetimer - playerController.componentCount;
-                else timer = 3;
+                if ((basetimer - playerController.componentCount) > 12) timer = basetimer - playerController.componentCount;
+                else timer = 12;
             randomNumber = Random.Range(0, 3);
       if(randomNumber > 1)
       {

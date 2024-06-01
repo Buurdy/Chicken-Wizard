@@ -16,8 +16,11 @@ public class DisplayComponent : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        compText.text = playerController.components[compNum];
+        if(playerController.components.Count > compNum)
+        {
+            compText.text = playerController.components[compNum];
+        }
     }
 }

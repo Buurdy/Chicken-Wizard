@@ -88,8 +88,8 @@ public class EnemyNavigation : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && cooldown <= 0)
         {
-            timesHit +=1;
-            cooldown = 1;
+            /*timesHit +=1;
+            cooldown = 1;*/
             hittext.Increase();
         }
     }

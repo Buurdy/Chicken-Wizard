@@ -259,7 +259,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -370,6 +370,60 @@ MonoBehaviour:
   m_Area: 0
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &51112659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 51112660}
+  - component: {fileID: 51112661}
+  m_Layer: 0
+  m_Name: EnemySpawn (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &51112660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51112659}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.45, y: -1.99, z: -0.048168298}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 69317808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &51112661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51112659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f81377812f747458ef4e4b7c18ec2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bashEnemy: {fileID: 5638636248118359201, guid: 5eec7f7d710c78f43a93699f6eb7bcd6, type: 3}
+  shootEnemy: {fileID: 3039202166817402552, guid: a479dc2949cd5104aa78d16ee2e5a557, type: 3}
+  player: {fileID: 153418169}
+  text: {fileID: 1453255387}
+  hittext: {fileID: 209583157}
+  damageManager: {fileID: 209583155}
+  killed: {fileID: 820140793}
+  killbased: 0
+  timerbased: 1
+  basetimer: 16
 --- !u!1 &69317807
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,6 +457,9 @@ Transform:
   - {fileID: 1125445080}
   - {fileID: 1313549692}
   - {fileID: 587154224}
+  - {fileID: 51112660}
+  - {fileID: 1857377842}
+  - {fileID: 142539782}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &74950553
@@ -525,7 +582,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -611,7 +668,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -682,6 +739,60 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &142539781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 142539782}
+  - component: {fileID: 142539783}
+  m_Layer: 0
+  m_Name: EnemySpawn (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &142539782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142539781}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.05, y: 5.96, z: -0.048168298}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 69317808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &142539783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142539781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f81377812f747458ef4e4b7c18ec2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bashEnemy: {fileID: 5638636248118359201, guid: 5eec7f7d710c78f43a93699f6eb7bcd6, type: 3}
+  shootEnemy: {fileID: 3039202166817402552, guid: a479dc2949cd5104aa78d16ee2e5a557, type: 3}
+  player: {fileID: 153418169}
+  text: {fileID: 1453255387}
+  hittext: {fileID: 209583157}
+  damageManager: {fileID: 209583155}
+  killed: {fileID: 820140793}
+  killbased: 0
+  timerbased: 1
+  basetimer: 15
 --- !u!4 &153418169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4984968927871811954, guid: 0594fea100ab2d247816eb1838abdcf5, type: 3}
@@ -832,7 +943,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1058,7 +1169,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1205,7 +1316,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1319,9 +1430,9 @@ MonoBehaviour:
   hittext: {fileID: 209583157}
   damageManager: {fileID: 209583155}
   killed: {fileID: 820140793}
-  killbased: 1
-  timerbased: 0
-  basetimer: 5
+  killbased: 0
+  timerbased: 1
+  basetimer: 16
 --- !u!4 &587154224
 Transform:
   m_ObjectHideFlags: 0
@@ -1331,7 +1442,7 @@ Transform:
   m_GameObject: {fileID: 587154222}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0026004314, y: 4.824464, z: -0.048168298}
+  m_LocalPosition: {x: 2.71, y: 4.75, z: -0.048168298}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1474,7 +1585,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1621,7 +1732,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1768,7 +1879,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1854,7 +1965,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2063,7 +2174,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2271,7 +2382,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2418,7 +2529,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2464,9 +2575,9 @@ MonoBehaviour:
   hittext: {fileID: 209583157}
   damageManager: {fileID: 209583155}
   killed: {fileID: 820140793}
-  killbased: 1
-  timerbased: 0
-  basetimer: 5
+  killbased: 0
+  timerbased: 1
+  basetimer: 17
 --- !u!4 &1125445080
 Transform:
   m_ObjectHideFlags: 0
@@ -2476,7 +2587,7 @@ Transform:
   m_GameObject: {fileID: 1125445078}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.157399, y: -3.6855364, z: -0.048168298}
+  m_LocalPosition: {x: -6.57, y: -2.4, z: -0.048168298}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2619,7 +2730,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2670,9 +2781,9 @@ MonoBehaviour:
   hittext: {fileID: 209583157}
   damageManager: {fileID: 209583155}
   killed: {fileID: 820140793}
-  killbased: 1
-  timerbased: 0
-  basetimer: 5
+  killbased: 0
+  timerbased: 1
+  basetimer: 18
 --- !u!4 &1313549692
 Transform:
   m_ObjectHideFlags: 0
@@ -2682,7 +2793,7 @@ Transform:
   m_GameObject: {fileID: 1313549690}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.8073997, y: 4.824464, z: -0.048168298}
+  m_LocalPosition: {x: -7.84, y: 5.68, z: -0.048168298}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3045,7 +3156,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3131,7 +3242,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3357,7 +3468,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3428,6 +3539,60 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &1857377841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1857377842}
+  - component: {fileID: 1857377843}
+  m_Layer: 0
+  m_Name: EnemySpawn (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1857377842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857377841}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -8.08, y: -6.43, z: -0.048168298}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 69317808}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1857377843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857377841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f81377812f747458ef4e4b7c18ec2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bashEnemy: {fileID: 5638636248118359201, guid: 5eec7f7d710c78f43a93699f6eb7bcd6, type: 3}
+  shootEnemy: {fileID: 3039202166817402552, guid: a479dc2949cd5104aa78d16ee2e5a557, type: 3}
+  player: {fileID: 153418169}
+  text: {fileID: 1453255387}
+  hittext: {fileID: 209583157}
+  damageManager: {fileID: 209583155}
+  killed: {fileID: 820140793}
+  killbased: 0
+  timerbased: 1
+  basetimer: 13
 --- !u!1 &1920836101
 GameObject:
   m_ObjectHideFlags: 0
@@ -3565,7 +3730,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3712,7 +3877,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3758,9 +3923,9 @@ MonoBehaviour:
   hittext: {fileID: 209583157}
   damageManager: {fileID: 209583155}
   killed: {fileID: 820140793}
-  killbased: 1
-  timerbased: 0
-  basetimer: 5
+  killbased: 0
+  timerbased: 1
+  basetimer: 12
 --- !u!4 &1995686276
 Transform:
   m_ObjectHideFlags: 0
@@ -3770,7 +3935,7 @@ Transform:
   m_GameObject: {fileID: 1995686274}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.13739944, y: -4.0855365, z: -0.048168298}
+  m_LocalPosition: {x: 2.98, y: -3.67, z: -0.048168298}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3913,7 +4078,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4060,7 +4225,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  m_Color: {r: 0.31132078, g: 0.2245557, b: 0.06314526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4146,6 +4311,10 @@ PrefabInstance:
     - target: {fileID: 2114843351856663444, guid: aaf9b61f0bf73854997f5caef5348d52, type: 3}
       propertyPath: m_text
       value: 'Times Hit: 0'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114843351856663444, guid: aaf9b61f0bf73854997f5caef5348d52, type: 3}
+      propertyPath: m_margin.z
+      value: -84.83099
       objectReference: {fileID: 0}
     - target: {fileID: 4154489865664626379, guid: aaf9b61f0bf73854997f5caef5348d52, type: 3}
       propertyPath: m_Pivot.x
@@ -4249,9 +4418,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 1995884729118704110}
   - {fileID: 257509163}
+  - {fileID: 69317808}
+  - {fileID: 820140792}
   - {fileID: 1789407052}
   - {fileID: 1445741658}
   - {fileID: 498164861}
-  - {fileID: 820140792}
   - {fileID: 1400119510}
-  - {fileID: 69317808}

@@ -28,13 +28,16 @@ public class IncreaseHitText : MonoBehaviour
 
     public void Increase()
     {
-        if(cooldown <= 0)
+        timesHit += 1;
+        text.SetText("Times Hit: " + timesHit);
+        /*
+        if (cooldown <= 0)
         {
         cooldown = 1;
         timesHit += 1;
         text.SetText("Times Hit: " + timesHit);
         pHealth.TakeDamage();
-        }
+        }*/
     }
 
     public static implicit operator IncreaseHitText(GameObject v)

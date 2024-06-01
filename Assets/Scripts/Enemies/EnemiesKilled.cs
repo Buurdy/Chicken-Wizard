@@ -10,18 +10,18 @@ public class EnemiesKilled : MonoBehaviour
     public int kills;
 
     public SpawnEnemy[] enemiespawners;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
+    }
 
     public void enemyHasDied()
     {

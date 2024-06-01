@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6524840239708999095}
   - component: {fileID: 2863693246921178316}
+  - component: {fileID: 2594454107191899396}
   m_Layer: 0
-  m_Name: player_projectile
+  m_Name: Egg Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,6 +85,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2594454107191899396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8670539564426354814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35a4af0e9ef1b6246a555f37ffcd061a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 750
 --- !u!1 &9116722804189658525
 GameObject:
   m_ObjectHideFlags: 0

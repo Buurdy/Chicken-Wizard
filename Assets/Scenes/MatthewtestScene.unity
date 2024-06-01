@@ -423,7 +423,7 @@ MonoBehaviour:
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 16
+  basetimer: 22
 --- !u!1 &69317807
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 15
+  basetimer: 24
 --- !u!4 &153418169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4984968927871811954, guid: 0594fea100ab2d247816eb1838abdcf5, type: 3}
@@ -1994,7 +1994,7 @@ MonoBehaviour:
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 14
+  basetimer: 21
 --- !u!4 &587154224
 Transform:
   m_ObjectHideFlags: 0
@@ -3493,7 +3493,7 @@ MonoBehaviour:
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 13
+  basetimer: 19
 --- !u!4 &1125445080
 Transform:
   m_ObjectHideFlags: 0
@@ -3847,7 +3847,7 @@ MonoBehaviour:
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 12
+  basetimer: 20
 --- !u!4 &1313549692
 Transform:
   m_ObjectHideFlags: 0
@@ -4274,7 +4274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1453255387}
-  maxAmountOfHits: 5
+  maxAmountOfHits: 10
   gameOverScreen: {fileID: 1447104062}
   pHealth: {fileID: 401393420}
 --- !u!1 &1486381901
@@ -5117,7 +5117,7 @@ MonoBehaviour:
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 13
+  basetimer: 23
 --- !u!1 &1920836101
 GameObject:
   m_ObjectHideFlags: 0
@@ -5450,7 +5450,7 @@ MonoBehaviour:
   killed: {fileID: 820140793}
   killbased: 0
   timerbased: 1
-  basetimer: 10
+  basetimer: 18
 --- !u!4 &1995686276
 Transform:
   m_ObjectHideFlags: 0

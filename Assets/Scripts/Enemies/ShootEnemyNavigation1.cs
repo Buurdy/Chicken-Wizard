@@ -10,7 +10,7 @@ public class ShootEnemyNavigation : MonoBehaviour
         //[SerializeField] Transform target;
         public Transform target;
         public TextMeshProUGUI text;
-        private int timesHit = 0;
+        //private int timesHit = 0;
         private float cooldown;
 
         public Transform wandsprite;

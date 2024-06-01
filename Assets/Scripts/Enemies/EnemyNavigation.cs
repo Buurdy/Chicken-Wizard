@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.AnimatedValues;
+//using UnityEditor.AnimatedValues;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Windows;
@@ -12,7 +12,7 @@ public class EnemyNavigation : MonoBehaviour
         //[SerializeField] Transform target;
         public Transform target;
         public TextMeshProUGUI text;
-        private int timesHit = 0;
+        //private int timesHit = 0;
         private float cooldown;
 
         public IncreaseHitText hittext;
